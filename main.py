@@ -1,12 +1,12 @@
-class BooksCollector:
+class BooksCollector: # позволяет установить жанр книг и добавить их в избранное
 
     def __init__(self):
-        self.books_genre = {}
-        self.favorites = []
-        self.genre = ['Фантастика', 'Ужасы', 'Детективы', 'Мультфильмы', 'Комедии']
-        self.genre_age_rating = ['Ужасы', 'Детективы']
+        self.books_genre = {} # куда можно добавить пару "Название книги: Жанр книги"
+        self.favorites = [] # содержит избранные книги
+        self.genre = ['Фантастика', 'Ужасы', 'Детективы', 'Мультфильмы', 'Комедии'] # содержит доступные жанры
+        self.genre_age_rating = ['Ужасы', 'Детективы'] # содержит жанры с возрастным рейтингом
 
-    # добавляем новую книгу
+    # добавляем новую книгу без жанра
     def add_new_book(self, name):
         if not self.books_genre.get(name) and 0 < len(name) < 41:
             self.books_genre[name] = ''
